@@ -6,12 +6,9 @@ import Html.Attributes exposing (..)
 
 main : Html msg
 main =
-        div [ class "content" ]
+    div [ class "content" ]
         [ header []
-            [ h1 []
-                [ text "ElmHub"
-                , span [ class "content" ]
-                    [ text "Like GitHub, but for Elm" ]
-                ]
+            [ h1 [] [ text "ElmHub" ]
+            , span [ class "tagline" ] [ text "Like GitHub, but for Elm" ]
             ]
         ]

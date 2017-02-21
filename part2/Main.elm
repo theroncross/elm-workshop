@@ -13,6 +13,7 @@ model =
         }
     }
 
+
 main : Html msg
 main =
     let
@@ -27,8 +28,9 @@ main =
             , ul [ class "results" ]
                 [ li []
                     [ span [ class "star-count" ]
-                        [ text ( toString model.result.stars ) ]
-                        , a [] [ text ("https://github.com/" ++ model.result.name)  ]
+                        [ text (toString model.result.stars) ]
+                    , a [ href ("https://github.com/" ++ model.result.name) ]
+                        [ text model.result.name ]
                     ]
                 ]
             ]

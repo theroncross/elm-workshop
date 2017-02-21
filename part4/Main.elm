@@ -24,10 +24,6 @@ type alias Msg =
     }
 
 
-{-| TODO add a type annotation to this value
-
-HINT: The type aliases above may come in handy for these exercises!
--}
 initialModel : Model
 initialModel =
     { query = "tutorial"
@@ -55,6 +51,7 @@ initialModel =
         ]
     }
 
+
 elmHubHeader : Html Msg
 elmHubHeader =
     header []
@@ -62,12 +59,14 @@ elmHubHeader =
         , span [ class "tagline" ] [ text "Like GitHub, but for Elm things." ]
         ]
 
+
 view : Model -> Html Msg
 view model =
     div [ class "content" ]
         [ elmHubHeader
         , ul [ class "results" ] (List.map viewSearchResult model.results)
         ]
+
 
 viewSearchResult : SearchResult -> Html Msg
 viewSearchResult result =
@@ -80,6 +79,7 @@ viewSearchResult result =
             [ text "X" ]
         ]
 
+
 update : Msg -> Model -> Model
 update msg model =
     if msg.operation == "DELETE_BY_ID" then
@@ -89,8 +89,9 @@ update msg model =
     else
         model
 
+
 main : Program Never Model Msg
-main = 
+main =
     Html.beginnerProgram
         { view = view
         , update = update

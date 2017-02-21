@@ -94,9 +94,9 @@ viewSearchResult result =
 update : Msg -> Model -> Model
 update msg model =
     case msg of
-        SetQuery q ->
-            { model | query = q }
-        
+        SetQuery query ->
+            { model | query = query }
+
         DeleteById resultId ->
             { model | results = List.filter (\r -> r.id /= resultId) model.results }
 
